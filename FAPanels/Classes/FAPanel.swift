@@ -176,12 +176,15 @@ open class FAPanelController: UIViewController {
 
         super.viewWillLayoutSubviews()
         
-        let shadowPath = UIBezierPath(rect: leftPanelContainer.bounds)
+        
         leftPanelContainer.layer.masksToBounds = false
         leftPanelContainer.layer.shadowColor = configs.shadowColor
         leftPanelContainer.layer.shadowOffset = configs.shadowOffset
         leftPanelContainer.layer.shadowOpacity = configs.shadowOppacity
-        leftPanelContainer.layer.shadowPath = shadowPath.cgPath
+        if configs.useShadow {
+            let shadowPath = UIBezierPath(rect: leftPanelContainer.bounds)
+            leftPanelContainer.layer.shadowPath = shadowPath.cgPath
+        }
     }
     
     
@@ -588,10 +591,12 @@ open class FAPanelController: UIViewController {
     
     //  style for panels
     
-    internal func applyStyle(onView: UIView) {
+    internal func applyStyle(onView: UIView, state: FAPanelVisibleState) {
         
-        onView.layer.cornerRadius = configs.cornerRadius
-        onView.clipsToBounds = true
+        if configs.statesForCorner.contains(state) {
+            onView.layer.cornerRadius = configs.cornerRadius
+            onView.clipsToBounds = true
+        }
     }
 
     

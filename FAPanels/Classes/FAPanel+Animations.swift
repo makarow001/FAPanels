@@ -377,7 +377,7 @@ extension FAPanelController {
         
         centerPanelVC!.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         centerPanelVC!.view.frame = centerPanelContainer.bounds
-        applyStyle(onView: centerPanelVC!.view)
+        applyStyle(onView: centerPanelVC!.view, state: .center)
     }
     
     
@@ -392,7 +392,7 @@ extension FAPanelController {
                 
                 layoutSidePanelVCs()
                 leftPanelVC!.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                applyStyle(onView: leftPanelVC!.view)
+                applyStyle(onView: leftPanelVC!.view, state: .left)
                 leftPanelContainer.addSubview(leftPanelVC!.view)
             }
             leftPanelContainer.isHidden = false
@@ -417,7 +417,7 @@ extension FAPanelController {
                 
                 layoutSidePanelVCs()
                 rightPanelVC!.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                applyStyle(onView: rightPanelVC!.view)
+                applyStyle(onView: rightPanelVC!.view, state: .right)
                 rightPanelContainer.addSubview(rightPanelVC!.view)
             }
             rightPanelContainer.isHidden = false
@@ -686,7 +686,7 @@ extension FAPanelController {
             
             centerPanelVC!.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             centerPanelVC!.view.frame = centerPanelContainer.bounds
-            applyStyle(onView: centerPanelVC!.view)
+            applyStyle(onView: centerPanelVC!.view,  state: .center)
             centerPanelContainer.addSubview(centerPanelVC!.view)
         }
     }

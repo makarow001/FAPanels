@@ -108,6 +108,7 @@ open class FAPanelConfigurations: NSObject {
     // Applies corner radius to panels
     
     open var cornerRadius: CGFloat = 0.0
+    open var statesForCorner: [FAPanelVisibleState] = [.left]
     
     
     
@@ -117,6 +118,7 @@ open class FAPanelConfigurations: NSObject {
     open var shadowColor   : CGColor = UIColor.black.cgColor
     open var shadowOffset  : CGSize  = CGSize(width: 5.0, height: 0.0)
     open var shadowOppacity: Float = 0.7
+    open var useShadow : Bool = true
 
     
     
